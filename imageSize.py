@@ -1,6 +1,8 @@
 from PIL import Image
 import os
 
+# Put this script into your photos directory then run it 
+
 # Image size x, y PX
 imgSize = (2560,1440)
 
