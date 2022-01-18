@@ -1,5 +1,5 @@
 from PIL import Image
-import os
+import Tkinter
 
 # Put this script into your photos directory then run it 
 
@@ -31,3 +31,5 @@ for filename in os.listdir(directory):
         continue
     else:
         continue
+
+    
