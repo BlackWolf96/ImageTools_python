@@ -7,12 +7,14 @@ class App(tk.Frame):
     def __init__(self, parent, *args, **kwargs):
         tk.Frame.__init__(self, parent, *args, **kwargs)
         self.parent = parent
+        
+        self.var1 = tk.IntVar()
+        self.var1 = tk.IntVar()
 
         self.btn1 = tk.Button(self, width=10, text="Open", command=self.ImageOpen)
         self.btn1.grid(row=0,column=0, pady=5, padx=5)
         self.btn2 = tk.Button(self, width=10, text="Edit", command=self.Edit)
-        self.btn2.grid(row=0,column=1, pady=5, padx=5)
-        self.var1 = tk.IntVar()
+        self.btn2.grid(row=0,column=1, pady=5, padx=5)       
         self.check1 = tk.Checkbutton(self, text="Resize", variable=self.var1, onvalue=1, offvalue=0)
         self.check1.grid(row=0, column=2, pady=5, padx=5)
         
@@ -30,7 +32,6 @@ class App(tk.Frame):
             img = Image.open(self.filename)
             resized = img.resize(re)
             resized.save('item.png')
-
             
 
 if __name__ == "__main__":
