@@ -1,9 +1,15 @@
 # ImageTools_python
 
-## Required python3
+## Requirements
+Python3 
+tkinter
+pil
 
 ### Lanch
 ```
-#### For imageformat.py
+For imageformat:
 python3 imageformat.py
+For imagesize:
+python3 imagesize.py
 ```
+
