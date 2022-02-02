@@ -13,7 +13,11 @@ class MainApplication(tk.Frame):
         self.grid_columnconfigure(1, weight=2)
 
         def OpenImage():
-          self.imgfile = filedialog.askopenfilename()
+          self.imgfile = filedialog.askopenfilename(filetypes=[
+            ('image file', '.png'),
+            ('image file', '.jpg'),
+            ('image file', '.jpeg'),
+          ])
           return self.imgfile
 
         def ConvertImage():
