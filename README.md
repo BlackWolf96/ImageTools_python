@@ -2,8 +2,8 @@
 
 ## Requirements
 Python3 
-tkinter
-pil
+tkinter lib
+pil lib
 
 ### Lanch
 ```
