@@ -1,19 +1,25 @@
 import tkinter as tk
-
+from tkinter import filedialog
+from PIL import Image
 class MainApplication(tk.Frame):
     def __init__(self, parent, *args, **kwargs):
         tk.Frame.__init__(self, parent, *args, **kwargs)
         self.parent = parent
         def OpenImage():
-          print('Elo')
+          file = filedialog.askopenfilename()
 
         def ConvertImage():
           x = self.width.get()
           y = self.height.get()
 
+          img = Image.Open( file )
+
+          img.resize(x,y)
+
+          img.save('new.png')
         
         self.width = tk.IntVar()
-        self.height = tk.IntWar()
+        self.height = tk.IntVar()
         self.ent1 = tk.Entry(self, textvariable=self.width)
         self.ent1.grid(row=0, column=0)
         self.ent2 = tk.Entry(self, textvariable=self.height)
