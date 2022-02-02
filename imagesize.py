@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import filedialog
 from PIL import Image
 import hashlib
-import datetime
 
 class MainApplication(tk.Frame):
     def __init__(self, parent, *args, **kwargs):
@@ -19,20 +18,23 @@ class MainApplication(tk.Frame):
           wymiar = (x,y)
           img = Image.open( self.imgfile )
           newimg = img.resize(wymiar)
-
-          name = hashlib.md5( datetime.datetime.now().encode('utf-8')).hexdigest()
+          name = hashlib.md5( self.imgfile.encode('utf-8')).hexdigest()
           newimg.save(name+'.png')
         
         self.width = tk.IntVar()
         self.height = tk.IntVar()
+        self.lab1 = tk.Label(self, text="Width")
+        self.lab1.grid(row=0, column=0)
         self.ent1 = tk.Entry(self, textvariable=self.width)
-        self.ent1.grid(row=0, column=0)
+        self.ent1.grid(row=0, column=1)
+        self.lab2 = tk.Label(self, text="Width")
+        self.lab2.grid(row=0, column=2)
         self.ent2 = tk.Entry(self, textvariable=self.height)
-        self.ent2.grid(row=0, column=1)
+        self.ent2.grid(row=0, column=3)
         self.btn1 = tk.Button(self, text="OpenFile", command=OpenImage)
-        self.btn1.grid(row=0, column=2)
+        self.btn1.grid(row=0, column=4)
         self.btn2 = tk.Button(self, text="Convert", command=ConvertImage)
-        self.btn2.grid(row=0, column=3)
+        self.btn2.grid(row=0, column=5)
 
         
 
