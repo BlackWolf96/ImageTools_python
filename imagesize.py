@@ -11,9 +11,11 @@ class MainApplication(tk.Frame):
         self.ent1 = tk.Entry(self)
         self.ent1.grid(row=0, column=0)
         self.ent2 = tk.Entry(self)
-        self.ent2.grid(row=0, column=0)
+        self.ent2.grid(row=0, column=1)
         self.btn1 = tk.Button(self, text="Convert", command=convert)
-        self.btn1.grid(row=0, column=1)
+        self.btn1.grid(row=0, column=2)
+        self.btn2 = tk.Button(self, text="Convert", command=convert)
+        self.btn2.grid(row=0, column=2)
 
         
 
