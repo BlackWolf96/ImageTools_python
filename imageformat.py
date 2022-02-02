@@ -14,7 +14,7 @@ class MainApplication(tk.Frame):
 
         def ConvertImage():
           image = Image.open( self.imgfile ).convert('RGB')
-          name = hashlib.md5( self.imgfile.encode('UTF-8')).hexdigest
+          name = hashlib.md5( self.imgfile.encode('UTF-8')).hexdigest()
           print( self.var.get())
           image.save( name +'.webp', 'WEBP')
 
@@ -22,7 +22,7 @@ class MainApplication(tk.Frame):
         self.var = tk.IntVar()
 
         # Items
-        self.check = tk.Checkbutton(self, text="webp", textvariable=var)
+        self.check = tk.Checkbutton(self, text="webp", textvariable=self.var)
         self.btn1 = tk.Button(self, text="open", command=OpenImage)
         self.btn2 = tk.Button(self, text="Convert", command=ConvertImage)
 
