@@ -30,7 +30,6 @@ class MainApplication(tk.Frame):
         self.btn1.grid(row=0, column=2)
         self.btn2 = tk.Button(self, text="Convert", command=ConvertImage)
         self.btn2.grid(row=0, column=3)
-
         
 
 if __name__ == "__main__":
