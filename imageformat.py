@@ -23,7 +23,7 @@ class MainApplication(tk.Frame):
 
         # Items
         #self.check = tk.Checkbutton(self, text="webp", textvariable=self.var)
-        self.label = tk.Label(self, text="Convert img to webp")
+        self.label = tk.Label(self, font=(Arial Blod, 11)text="Convert img to webp")
         self.btn1 = tk.Button(self, text="open", width=10, command=OpenImage)
         self.btn2 = tk.Button(self, text="Convert", width=10, command=ConvertImage)
 
