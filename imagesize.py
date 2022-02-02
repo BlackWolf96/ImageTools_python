@@ -5,14 +5,18 @@ class MainApplication(tk.Frame):
     def __init__(self, parent, *args, **kwargs):
         tk.Frame.__init__(self, parent, *args, **kwargs)
         self.parent = parent
+
+        global imgfile
+
         def OpenImage():
-          file = filedialog.askopenfilename()
+          imgfile = filedialog.askopenfilename()
+          print(imgfile)
+          return imgfile
 
         def ConvertImage():
           x = self.width.get()
           y = self.height.get()
-
-          img = Image.Open( file )
+          img = Image.open( imgfile )
 
           img.resize(x,y)
 
@@ -26,7 +30,7 @@ class MainApplication(tk.Frame):
         self.ent2.grid(row=0, column=1)
         self.btn1 = tk.Button(self, text="OpenFile", command=OpenImage)
         self.btn1.grid(row=0, column=2)
-        self.btn2 = tk.Button(self, text="Convert", command=ConvertImage)
+        self.btn2 = tk.Button(self, text="Convert", command=ConvertImage(imgfile))
         self.btn2.grid(row=0, column=3)
 
         
