@@ -14,8 +14,9 @@ class MainApplication(tk.Frame):
 
         def ConvertImage():
           image = Image.open( self.imgfile ).convert('RGB')
-          name = hashlib.md5( self.imgfile.encode('UTF-8')).hexdigest
-          print( self.var.get())
+          name = hashlib.md5( self.imgfile.encode('UTF-8')).hexdigest()
+          if self.var.get():
+            print( ' Works ')
           image.save( name +'.webp', 'WEBP')
 
         # Vars
