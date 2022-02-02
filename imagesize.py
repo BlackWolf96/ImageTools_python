@@ -15,11 +15,10 @@ class MainApplication(tk.Frame):
         def ConvertImage():
           x = self.width.get()
           y = self.height.get()
-          wymiar = (x,y)
+          size = (x,y)
           img = Image.open( self.imgfile )
-          newimg = img.resize(wymiar)
-          name = hashlib.md5( self.imgfile.encode('utf-8')).hexdigest()
-          newimg.save(name+'.png')
+          newimg = img.resize(size)
+          newimg.save(hashlib.md5( self.imgfile.encode('utf-8')).hexdigest()+'.png')
         
         self.width = tk.IntVar()
         self.height = tk.IntVar()
