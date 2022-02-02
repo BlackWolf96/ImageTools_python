@@ -15,13 +15,15 @@ class MainApplication(tk.Frame):
         def ConvertImage():
           image = Image.open( self.imgfile ).convert('RGB')
           name = hashlib.md5( self.imgfile.encode('UTF-8')).hexdigest
-          image.save( +'.webp', 'WEBP')
+          image.save( name +'.webp', 'WEBP')
 
         # Items
-        self.lab1 = tk.Label(self, text="Width")
-
+        self.btn1 = tk.Button(self, text="open", command=OpenImage)
+        self.btn2 = tk.Button(self, text="Convert", command=ConvertImage)
 
         # Grid
+        self.btn1.grid(row=0,column=0)
+        self.btn2.grid(row=0,column=1)
 
 if __name__ == "__main__":
     root = tk.Tk()
