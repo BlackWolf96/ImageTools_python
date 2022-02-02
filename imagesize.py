@@ -5,11 +5,13 @@ class MainApplication(tk.Frame):
         tk.Frame.__init__(self, parent, *args, **kwargs)
         self.parent = parent
 
+        def convert(self):
+          print('Work')
+        
         self.btn1 = tk.Button(self, text="Convert", command=self.convert)
         self.btn1.grid(row=0, column=1)
 
-        def convert(self):
-          print('Work')
+        
 
 if __name__ == "__main__":
     root = tk.Tk()
